@@ -1,0 +1,47 @@
+.slideholder {
+    height: 600px;
+}
+
+
+ .fa-twitter-square{ 
+     padding-left: 7px;
+
+ }
+
+ .cart{
+    margin-right: 700px;
+     
+ }
+
+ .fa-instagram{
+    padding-left: 7px;
+ }
+
+ .fa-facebook-square{
+    padding-left: 7px;
+ }
+
+ .fa-pinterest-square{
+    padding-left: 7px;
+ }
+
+
+ .nav-wrapper {
+     border-bottom: 1in;
+     border-color: grey;
+
+ }
+
+ 
+
+ .img-holder {position: relative;}
+     .btn {
+       
+       
+        height: 299px;
+         width: 260px; 
+
+         background-color: grey;
+
+ 
+     }
