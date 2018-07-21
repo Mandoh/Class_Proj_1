@@ -1,6 +1,4 @@
-.slideholder {
-    height: 600px;
-}
+
 
 
  .fa-twitter-square{ 
@@ -9,7 +7,9 @@
  }
 
  .cart{
-    margin-right: 700px;
+    position: absolute;
+   
+    right: 75%;
      
  }
 
@@ -27,21 +27,65 @@
 
 
  .nav-wrapper {
-     border-bottom: 1in;
-     border-color: grey;
+     border-bottom: 7px;
+     border-color: rgb(143, 141, 141);
+     height: 100px;
 
  }
 
+   .slideholder{
+       position: relative;
+       height: 600px;
+
+   }
+
+ .slideholder  .btn-l{
+     position: absolute;
+     left: 55%;
+     font-family:  'Abril Fatface', cursive;
+     top:35%;
+    
+    
+ }
+
+ .slideholder  .btn-r{
+    position: absolute;
+    right: 55%;
+   font-family:  'Abril Fatface', cursive;
+     top:35%;
+    
+    
+}
+
+.center{
+    
+    font-size: 75px;
+    font-weight: bolder;
+    font-family: 'Cinzel', serif;
+}
+
+.notifications{
+    position: absolute;
+    right: 800px;
+}
+
+.medium{
+    position: absolute;
+    right: 1in;
+    
+}
+
+
  
+     
+.white-text{
+   
+    
+    font-family: 'Cinzel', serif;
+}
 
- .img-holder {position: relative;}
-     .btn {
-       
-       
-        height: 299px;
-         width: 260px; 
+   .menu {
+    position: absolute;
+    right: 2in;
 
-         background-color: grey;
-
- 
-     }
+   }

@@ -1,3 +1,4 @@
+
 var slideIndex = 0;
     carousel();
     
@@ -16,22 +17,11 @@ var slideIndex = 0;
     }
      
 
-    showButtons();
-
-    function showButtons(){
-
-    var i;
-    for(i = 0, i < 2; i++;){
-    btn = $("<button>").attr('class',"btn");
-    $(".slideholder").append(btn);
     
-    }
-    }
-      
 
-
-  
+   
   
 
+     
 
         
