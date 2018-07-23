@@ -89,3 +89,7 @@
     right: 2in;
 
    }
+
+#content-body{
+    max-width: 30%;
+}

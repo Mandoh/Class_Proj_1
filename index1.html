@@ -16,7 +16,7 @@
 
 <body>
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper teal darken-3">
       <a href="#!" class="brand-logo center">Take In</a>
       <ul class="left hide-on-med-and-down">
 
@@ -44,22 +44,110 @@
   </nav>
 
 
-  <div class="slideholder" style="max-width:100%">
-    <a class="btn-l waves-effect waves-light btn-large">
-      <i class="large material-icons left" onclick="takeOut()">local_dining</i>Take Out</a>
-    <a class=" btn-r waves-effect waves-light btn-large">
-      <i class="large material-icons right">local_dining</i>Stay In</a>
-    <img class="mySlides" src="./Assets/images/AdobeStock_203149402_Preview.jpeg" height="100%" width="100%">
-    <img class="mySlides" src="./Assets/images/taco_meal.jpg" height="100%" width="100%">
-    <img class="mySlides" src="./Assets/images/cell-takeout.jpg" height="100%" width="100%">
+
+  <!-- <div class="container" style="height:300px; max-width:100%;">
+   Dropdown Trigger 
+<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+
+ Dropdown Structure 
+<ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+  </ul>
+</div> -->
+
+
+
+  <div id="wrapper">
+    <div class="slideholder" style="max-width:100%">
+
+      <div id="subwrapper">
+        <a id="stay-in" class=" btn-r waves-effect waves-light btn-large">
+          <i class="large material-icons right">restaurant</i>Stay In</a>
+
+        <a id="take-out" class="btn-l waves-effect waves-light btn-large">
+          <i class="large material-icons left" onclick="takeOut()">room_service</i>Take Out</a>
+      </div>
+
+      
+      
+      <img class="mySlides" src="./Assets/images/AdobeStock_203149402_Preview.jpeg" height="100%" width="100%">
+      <img class="mySlides" src="./Assets/images/taco_meal.jpg" height="100%" width="100%">
+      <img class="mySlides" src="./Assets/images/cell-takeout.jpg" height="100%" width="100%">
+
+    </div>
+  </div>
+
+  <div id="content-body">
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header teal-text">
+          <i class="material-icons">location_city</i>City</div>
+        <div class="collapsible-body">
+
+          <select class="browser-default">
+            <option value="" disabled selected>Choose a City</option>
+            <option value="1">Chicago</option>
+            <option value="2">Seattle</option>
+            <option value="3">Houston</option>
+            <option value="4">Los Angeles</option>
+            <option value="5">New York</option>
+            <option value="6">Detroit</option>
+            <option value="7">Indianapolis</option>
+            <option value="8">Denver</option>
+            <option value="9">St.Louis</option>
+            <option value="10">Washington D.C.</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">local_pizza</i>Cuisine</div>
+        <div class="collapsible-body">
+          <select class="browser-default">
+            <option value="" disabled selected>Pick a Cuisine</option>
+            <option value="1">American</option>
+            <option value="2">Asian</option>
+            <option value="3">Bar Food</option>
+            <option value="4">Breakfast</option>
+            <option value="5">Burger</option>
+            <option value="6">Italian</option>
+            <option value="7">Mexican</option>
+            <option value="8">Pizza</option>
+            <option value="9">Sandwich</option>
+            <option value="10">Seafood</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">local_atm</i>Price-Range</div>
+        <div class="collapsible-body">
+          <p>
+            <label>
+              <input class="with-gap" name="group3" type="radio" checked />
+              <span>$-$$$</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input class="with-gap" name="group3" type="radio" checked />
+              <span>$$$-$</span>
+            </label>
+          </p>
+
+        </div>
+      </li>
+    </ul>
 
   </div>
 
 
-
-
-
-  <footer class="page-footer">
+  <footer class="page-footer green darken-4">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -99,15 +187,10 @@
   </footer>
 
 
-
-
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
   <script src="./Assets/javascript/app.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 
 </html>
