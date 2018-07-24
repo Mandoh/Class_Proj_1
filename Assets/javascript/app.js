@@ -1,15 +1,18 @@
-$("#stay-in").on("click", function(){
- console.log("You clicked stay in");
+$(document).ready(function(){
+$("#stay-in").on("click", function () {
+  console.log("You clicked stay in");
   //$("#subwrapper").remove();   // This removes buttons when clicked
 
 })
 
 // Collapsible works with this here
-var options = [{
-  
-}]
 
-$("#take-out").on("click", function(){
+
+$("#take-out").on("click", function () {
+  $(".slideholder").fadeOut(500, function () {
+  });
+  $(".form-a").fadeIn(500, function () {
+  });
   console.log("You clicked take out");
 })
 
@@ -31,18 +34,23 @@ function carousel() {
   setTimeout(carousel, 4000); // Change image every 4 seconds
   //$(".dropdown-trigger").dropdown();
 };
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems, options);
-  });
-
-
-
+});
+document.addEventListener('DOMContentLoaded', function () {
+  let options = [{}];
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems, options);
+});
 
 
 
-    
+  
+
+
+
+
+
+
+
 
 
 
