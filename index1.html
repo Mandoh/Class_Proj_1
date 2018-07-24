@@ -45,137 +45,123 @@
 
 
 
-  <!-- <div class="container" style="height:300px; max-width:100%;">
-   Dropdown Trigger 
-<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
- Dropdown Structure 
-<ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
-</div> -->
-
-
-
   <div id="wrapper">
     <!-- dropdown rest. begin -->
     <div class="form-a">
-    <div class="restaurants">
-      <ul class="collapsible">
-        <li>
-          <div class="collapsible-header">
-            <i class="material-icons">location_city</i>City</div>
-          <div class="collapsible-body">
+      <div class="restaurants">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">location_city</i>City</div>
+            <div class="collapsible-body">
 
-            <select class="browser-default">
-              <option value="" disabled selected>Choose a City</option>
-              <option value="1">Chicago</option>
-              <option value="2">Seattle</option>
-              <option value="3">Houston</option>
-              <option value="4">Los Angeles</option>
-              <option value="5">New York</option>
-              <option value="6">Detroit</option>
-              <option value="7">Indianapolis</option>
-              <option value="8">Denver</option>
-              <option value="9">St.Louis</option>
-              <option value="10">Washington D.C.</option>
-            </select>
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">
-            <i class="material-icons">local_pizza</i>Cuisine</div>
-          <div class="collapsible-body">
-            <select class="browser-default">
-              <option value="" disabled selected>Pick a Cuisine</option>
-              <option value="1">American</option>
-              <option value="2">Asian</option>
-              <option value="3">Bar Food</option>
-              <option value="4">Breakfast</option>
-              <option value="5">Burger</option>
-              <option value="6">Italian</option>
-              <option value="7">Mexican</option>
-              <option value="8">Pizza</option>
-              <option value="9">Sandwich</option>
-              <option value="10">Seafood</option>
-            </select>
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">
-            <i class="material-icons">local_atm</i>Price-Range</div>
-          <div class="collapsible-body">
-            <p>
-              <label>
-                <input class="with-gap" name="group3" type="radio" checked />
-                <span>$-$$$</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input class="with-gap" name="group3" type="radio" checked />
-                <span>$$$-$</span>
-              </label>
-            </p>
+              <select class="browser-default" id="city">
+                <option value="" disabled selected>Choose a City</option>
+                <option value="292">Chicago</option>
+                <option value="2">Seattle</option>
+                <option value="3">Houston</option>
+                <option value="4">Los Angeles</option>
+                <option value="5">New York</option>
+                <option value="6">Detroit</option>
+                <option value="7">Indianapolis</option>
+                <option value="8">Denver</option>
+                <option value="9">St.Louis</option>
+                <option value="10">Washington D.C.</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">local_pizza</i>Cuisine</div>
+            <div class="collapsible-body">
+              <select class="browser-default" id="cuisine">
+                <option value="" disabled selected>Pick a Cuisine</option>
+                <option value="1">American</option>
+                <option value="25">Asian</option>
+                <option value="3">Bar Food</option>
+                <option value="4">Breakfast</option>
+                <option value="5">Burger</option>
+                <option value="6">Italian</option>
+                <option value="7">Mexican</option>
+                <option value="8">Pizza</option>
+                <option value="9">Sandwich</option>
+                <option value="10">Seafood</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">local_atm</i>Price-Range</div>
+            <div class="collapsible-body">
+              <select class="browser-default" id="range">
+                <option value="" disabled selected>Pick a Price Range</option>
+                <option value="asc">$-$$$</option>
+                <option value="desc">$$$-$</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-          </div>
-        </li>
-      </ul>
+      <div id="subwrapper">
+        <a id="next-a" class=" btn-r waves-effect waves-light btn-large">Next</a>
+      </div>
+
     </div>
-  </div>
-  <div class="form-b">
-    <div class="restaurants">
-      <ul class="collapsible">
-        <li>
-          <div class="collapsible-header">
-            <i class="material-icons">restaurant</i>Ingredients</div>
-          <div class="collapsible-body">
+    <!-- results for restaurants -->
+    <div class="container results" id="results-a">
 
-            <select class="browser-default">
-              <option value="" disabled selected>Choose an ingredient or a category</option>
-              <option value="1">Beef</option>
-              <option value="2">Chicken</option>
-              <option value="3">Dessert</option>
-              <option value="4">Lamb</option>
-              <option value="5">Miscellaneous</option>
-              <option value="6">Pasta</option>
-              <option value="7">Pork</option>
-              <option value="8">Seafood</option>
-              <option value="9">Side</option>
-              <option value="10">Starter</option>
-              <option value="10">Vegan</option>
-              <option value="10">Vegetarian</option>
-            </select>
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">
-            <i class="material-icons">local_pizza</i>Cuisine</div>
-          <div class="collapsible-body">
-            <select class="browser-default">
-              <option value="" disabled selected>Pick a Cuisine</option>
-              <option value="1">Italian</option>
-              <option value="2">Thai</option>
-              <option value="3">Vietnamese</option>
-              <option value="4">Mexican</option>
-              <option value="5">American</option>
-              <option value="6">Spanish</option>
-              <option value="7">Japenese</option>
-              <option value="8">Indian</option>
-              <option value="9">French</option>
-              <option value="10">British</option>
-            </select>
-          </div>
-        </li>
-        
-      </ul>
     </div>
-  </div>
+    <!-- dropdown for recipe begins -->
+
+    <div class="form-b">
+      <div class="restaurants">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">restaurant</i>Ingredients</div>
+            <div class="collapsible-body">
+
+              <select class="browser-default">
+                <option value="" disabled selected>Choose an ingredient or a category</option>
+                <option value="1">Beef</option>
+                <option value="2">Chicken</option>
+                <option value="3">Dessert</option>
+                <option value="4">Lamb</option>
+                <option value="5">Miscellaneous</option>
+                <option value="6">Pasta</option>
+                <option value="7">Pork</option>
+                <option value="8">Seafood</option>
+                <option value="9">Side</option>
+                <option value="10">Starter</option>
+                <option value="10">Vegan</option>
+                <option value="10">Vegetarian</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">local_pizza</i>Cuisine</div>
+            <div class="collapsible-body">
+              <select class="browser-default">
+                <option value="" disabled selected>Pick a Cuisine</option>
+                <option value="1">Italian</option>
+                <option value="2">Thai</option>
+                <option value="3">Vietnamese</option>
+                <option value="4">Mexican</option>
+                <option value="5">American</option>
+                <option value="6">Spanish</option>
+                <option value="7">Japenese</option>
+                <option value="8">Indian</option>
+                <option value="9">French</option>
+                <option value="10">British</option>
+              </select>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
     <!-- home page begin -->
     <div class="slideholder" style="max-width:100%">
 
@@ -194,54 +180,54 @@
       <img class="mySlides" src="./Assets/images/cell-takeout.jpg" height="100%" width="100%">
 
     </div>
-  
 
 
 
-  <footer class="page-footer teal darken-4">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Take IN</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li>
-              <a class="grey-text text-lighten-3" href="#!">Twitter</a>
-              <i class="fab fa-twitter-square"></i>
-            </li>
-            <li>
-              <a class="grey-text text-lighten-3" href="#!">Instagram</a>
-              <i class="fab fa-instagram"></i>
-            </li>
-            <li>
-              <a class="grey-text text-lighten-3" href="#!">Facebook</a>
-              <i class="fab fa-facebook-square"></i>
-            </li>
-            <li>
-              <a class="grey-text text-lighten-3" href="#!">Pinterest</a>
-              <i class="fab fa-pinterest-square"></i>
-              </i>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
+    <!-- footer begin -->
+    <footer class="page-footer teal darken-4">
       <div class="container">
-        © 2017Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">Contact Us</a>
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Take IN</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Twitter</a>
+                <i class="fab fa-twitter-square"></i>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Instagram</a>
+                <i class="fab fa-instagram"></i>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Facebook</a>
+                <i class="fab fa-facebook-square"></i>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Pinterest</a>
+                <i class="fab fa-pinterest-square"></i>
+                </i>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2017Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">Contact Us</a>
+        </div>
+      </div>
+    </footer>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-  <script src="./Assets/javascript/app.js"></script>
+    <script src="./Assets/javascript/app.js"></script>
 </body>
 
 </html>

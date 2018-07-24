@@ -89,10 +89,17 @@
     right: 2in;
 
    }
+/* take-out */
 .form-a{
     display: none;
     margin: auto;
 }
+.container .results{
+    display: none;
+    margin: auto;
+}
+
+/* stay-in */
 .form-b{
     display: none;
     margin: auto;
