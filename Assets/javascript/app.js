@@ -16,7 +16,13 @@ $("#take-out").on("click", function () {
   console.log("You clicked take out");
 })
 
-
+$("#stay-in").on("click", function () {
+  $(".slideholder").fadeOut(500, function () {
+  });
+  $(".form-b").fadeIn(500, function () {
+  });
+  console.log("You clicked stay in");
+})
 var slideIndex = 0;
 carousel();
 
