@@ -104,7 +104,7 @@
     <div class="form-b">
       <div class="restaurants">
         <ul class="collapsible">
-          <li>
+          <!-- <li>
             <div class="collapsible-header">
               <i class="material-icons">restaurant</i>Ingredients</div>
             <div class="collapsible-body">
@@ -125,29 +125,38 @@
                 <option value="10">Vegetarian</option>
               </select>
             </div>
-          </li>
+          </li> -->
           <li>
             <div class="collapsible-header">
               <i class="material-icons">local_pizza</i>Cuisine</div>
             <div class="collapsible-body">
-              <select class="browser-default">
+              <select class="browser-default" id="type">
                 <option value="" disabled selected>Pick a Cuisine</option>
-                <option value="1">Italian</option>
-                <option value="2">Thai</option>
-                <option value="3">Vietnamese</option>
-                <option value="4">Mexican</option>
-                <option value="5">American</option>
-                <option value="6">Spanish</option>
-                <option value="7">Japenese</option>
-                <option value="8">Indian</option>
-                <option value="9">French</option>
-                <option value="10">British</option>
+                <option value="Italian">Italian</option>
+                <option value="Thai">Thai</option>
+                <option value="Vietnamese">Vietnamese</option>
+                <option value="Mexican">Mexican</option>
+                <option value="American">American</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Japenese">Japenese</option>
+                <option value="Indian">Indian</option>
+                <option value="French">French</option>
+                <option value="British">British</option>
               </select>
             </div>
           </li>
 
         </ul>
       </div>
+      <div id="subwrapper">
+        <a id="next-b" class=" btn-r waves-effect waves-light btn-large">Next</a>
+      </div>
+    </div>
+    <div class="container results" id="results-b">
+      <div id="meal-view"></div>
+      <!-- Recipes will Get Dumped Here -->
+      <div id="thumb-view" class="image"></div>
+      <div id="rec-view"></div>
     </div>
     <!-- home page begin -->
     <div class="slideholder" style="max-width:100%">

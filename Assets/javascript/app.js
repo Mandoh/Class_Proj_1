@@ -17,7 +17,7 @@ $("#take-out").on("click", function () {
 })
 
 $("#next-a").on("click", function () {
-  
+
   getRest();
 
   $(".form-a").fadeOut(500, function () {
@@ -35,7 +35,16 @@ $("#stay-in").on("click", function () {
   });
   console.log("You clicked stay in");
 })
+$("#next-b").on("click", function () {
 
+  getReci();
+
+  $(".form-b").fadeOut(500, function () {
+  });
+  $(".results-b").fadeIn(500, function () {
+  });
+  console.log("You clicked next-b");
+})
 
 
 
@@ -118,8 +127,59 @@ function getRest() {
     // console.log(response.restaurants[randomize()]);
   });
 };
+// function rand2() {
+//   var num = Math.floor((Math.random() * response.meals.length) + 1);
+//   return num;
+// };
 
+function getReci() {
+  var mdbAreaURL = "https://www.themealdb.com/api/json/v1/1/filter.php?a="
+  var mdbSelectionURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
+  var keywordAPI = $("#type option:selected").val();
+  var queryURL = mdbAreaURL + keywordAPI;
 
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    let num = Math.floor((Math.random() * response.meals.length));
+    // console.log(response.meals[num].idMeal);
+    // console.log(response);
+    // console.log(keywordAPI);
+    var mealID = response.meals[num].idMeal;
+    var mealURL = mdbSelectionURL + mealID;
+    $.ajax({
+      url: mealURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
+      thumbDisplay(response, mealID);
+      recipeDisplay(response, mealID);
+    })
+  });
+
+};
+
+function recipeDisplay(e, id) {
+  var recDiv = $("<div>");
+  var showRecipe = $("<p>").text(e.meals[0].strInstructions);
+  var titleRecipe =$("<h1>").text(e.meals[0].strMeal);
+  // var recImg = $("<img src=" + e. + ">");
+  // recDiv.prepend(recImg);
+  recDiv.append(showRecipe);
+  recDiv.prepend(titleRecipe);
+  $("#rec-view").append(recDiv);
+  
+}
+
+function thumbDisplay(e, id) {
+  var tmbDiv = $("<a>");
+  var showThumb = $("<img src=" + e.meals[0].strMealThumb +">");
+  // var recImg = $("<img src=" + e. + ">");
+  // recDiv.prepend(recImg);
+  tmbDiv.append(showThumb);
+  $("#thumb-view").append(tmbDiv);
+}
 
 
 
