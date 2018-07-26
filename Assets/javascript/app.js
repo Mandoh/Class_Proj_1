@@ -17,7 +17,9 @@ $("#take-out").on("click", function () {
 })
 
 $("#next-a").on("click", function () {
+  
   getRest();
+
   $(".form-a").fadeOut(500, function () {
   });
   $(".results-a").fadeIn(500, function () {
@@ -65,45 +67,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.collapsible');
   var instances = M.Collapsible.init(elems, options);
 });
-// ------------------------------------------------------
 
-// restaurant api variables
-var restApi = [];
-// var city= restApi[0];
-// var cuisine= restApi[1];
-// var range= restApi[2];
-
-// add recipie api varibles here
-
-
-
-
-//--------------------------------------
 $("select").change(function () {   // <<<<< this is the correct syntax
   // collecting .val() from RESTAURANT dropdowns (AM)
-  var qURL = 'https://developers.zomato.com/api/v2.1/search?entity_id=' + restApi[0] + '&entity_type=city&count=20&cuisines=' + restApi[1] + '&sort=cost&order=' + restApi[2] + '&apikey=e304ed6f3ad9f07bbf5b3447c1a94f04';
   $("#city option:selected").each(function () {
-    restApi[0] = $(this).val();
-    console.log(restApi);
-    console.log(qURL);
+
   });
 
   $("#cuisine option:selected").each(function () {
-    restApi[1] = $(this).val();
-    console.log(restApi);
+
   });
 
   $("#range option:selected").each(function () {
-    restApi[2] = $(this).val();
-    console.log(restApi);
+
   });
   // copy one of the 3 calls above and rename them accordingly to the recipie dropdown id's and paste below
   // collect .val() from RECIPE dropdowns
-
-
-
-
-
   // --------------------------------------------------------------------
 });
 
@@ -118,12 +97,17 @@ function randomize() {
 // Creating an AJAX call for the specific movie button being clicked (AM)
 function getRest() {
 
+  var city = $("#city option:selected").val();
+  var cuisine = $("#cuisine option:selected").val();
+  var price = $("#range option:selected").val();
+
+  var qURL = 'https://developers.zomato.com/api/v2.1/search?entity_id=' + city + '&entity_type=city&count=20&cuisines=' + cuisine + '&sort=cost&order=' + price + '&apikey=e304ed6f3ad9f07bbf5b3447c1a94f04';
+
   $.ajax({
     url: qURL,
     method: "GET"
   }).then(function (response) {
     console.log("call sucess");
-    console.log(restApi);
     // $("#results-a").append(restApi);
     // console.log(response);
     console.log(qURL);
