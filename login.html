@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
+        <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Cinzel:400,700,900|Gloria+Hallelujah" rel="stylesheet">
     <title>Take-In</title>
 </head>
@@ -34,16 +35,72 @@
             <div class="row">
 
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light" type="submit" name="action" id= "button">Submit
                 <i class="material-icons right">send</i>
             </button>
+            <button class="btnlogout waves-effect waves-light hide" type="submit" name="action" id ="logout">LogOut
+                    <i class="material-icons right">logout</i>
+                <div class= "logger"></div>
 
         </form>
     </div>
     <script type="text/javascript"> 
-        $(document).ready(function () {
-            M.updateTextFields();
-        });
+
+    var config = {
+    apiKey: "AIzaSyAg9qttwGz5qzU9c6llBX2IkmCDNHhQ5KU",
+    authDomain: "take-in-cbc30.firebaseapp.com",
+    databaseURL: "https://take-in-cbc30.firebaseio.com",
+    projectId: "take-in-cbc30",
+    storageBucket: "take-in-cbc30.appspot.com",
+    messagingSenderId: "482325799781"
+  };
+  firebase.initializeApp(config);
+
+  
+           
+           auth = firebase.auth();
+
+           var email;
+           var password;
+           var promise;
+           var button = document.getElementById('button')
+           var btnlogout = document.getElementById('logout')
+           var emailId = document.getElementById('email');
+           var passwordId = document.getElementById('password')
+           button.addEventListener("click", e => {
+               e.preventDefault();
+               // get email & password
+              email = $("#email").val();
+              password = $("#password").val();
+                 // firebase authentication 
+             promise =  auth.signInWithEmailAndPassword(email,password)
+               promise.catch( e => console.log(e.message));
+            
+
+           });
+
+           firebase.auth().onAuthStateChanged(firebaseUser => {
+               if (firebaseUser){
+                   console.log(firebaseUser);
+                   btnlogout.classList.remove('hide');
+                   }
+                   else{
+                       console.log("not Logged In")
+                       btnlogout.classList.add('hide');
+                   }
+
+
+           });
+
+
+
+          
+
+
+
+
+
+           
 
     </script>
 
