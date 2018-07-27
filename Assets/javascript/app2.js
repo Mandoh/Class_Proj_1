@@ -19,7 +19,7 @@ var config = {
 
   $(".submit").on("click", function(event) {
     event.preventDefault();
-     email = $("#email").val().trim();
+     
      emailValidate = $("#email_inline").val().trim();
 
 
@@ -76,7 +76,7 @@ var config = {
 
     // Change the HTML to reflect
     $(".account_display").removeClass("hide");
-    $(".account_display").append("<span> Welcome:" +snapshot.val().email +"</span>" +  "<span>" + snapshot.val().userFirst + snapshot.val().userFirst + "</span>");
+    $(".account_display").append("<span>" +snapshot.val().email +"</span>" +  "<span>" + snapshot.val().userFirst + snapshot.val().userFirst + "</span>");
        
     resetForm();
 
