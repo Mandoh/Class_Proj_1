@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+ 
 $("#stay-in").on("click", function () {
   console.log("You clicked stay in");
   //$("#subwrapper").remove();   // This removes buttons when clicked
@@ -19,6 +19,7 @@ $("#take-out").on("click", function () {
 $("#next-a").on("click", function () {
 
   getRest();
+  
 
   $(".form-a").fadeOut(500, function () {
   });
@@ -45,6 +46,8 @@ $("#next-b").on("click", function () {
   });
   console.log("You clicked next-b");
 })
+
+
 
 
 
@@ -79,16 +82,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $("select").change(function () {   // <<<<< this is the correct syntax
   // collecting .val() from RESTAURANT dropdowns (AM)
-  $("#city option:selected").each(function () {
 
+  var city;
+  var cuisine;
+  var price;
+  $("#city option:selected").each(function () {
+  
+  console.log(city);
   });
 
   $("#cuisine option:selected").each(function () {
-
+    
+    console.log(cuisine)
   });
 
   $("#range option:selected").each(function () {
-
+    
+    console.log(price)
   });
   // copy one of the 3 calls above and rename them accordingly to the recipie dropdown id's and paste below
   // collect .val() from RECIPE dropdowns
@@ -106,9 +116,9 @@ function randomize() {
 // Creating an AJAX call for the specific movie button being clicked (AM)
 function getRest() {
 
-  var city = $("#city option:selected").val();
-  var cuisine = $("#cuisine option:selected").val();
-  var price = $("#range option:selected").val();
+   city = $("#city option:selected").val();
+  cuisine = $("#cuisine option:selected").val();
+   price = $("#range option:selected").val();
 
   var qURL = 'https://developers.zomato.com/api/v2.1/search?entity_id=' + city + '&entity_type=city&count=20&cuisines=' + cuisine + '&sort=cost&order=' + price + '&apikey=e304ed6f3ad9f07bbf5b3447c1a94f04';
 
@@ -116,8 +126,12 @@ function getRest() {
     url: qURL,
     method: "GET"
   }).then(function (response) {
-    console.log("call sucess");
-    // $("#results-a").append(restApi);
+    console.log("call success");
+  
+   
+   
+     console.log(city + cuisine + price)
+
     // console.log(response);
     console.log(qURL);
     // $("#results-a").append(response.restaurants[0].restaurant.name);
@@ -182,6 +196,22 @@ function thumbDisplay(e, id) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
