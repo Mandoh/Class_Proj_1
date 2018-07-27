@@ -17,7 +17,7 @@ $("#take-out").on("click", function () {
 })
 
 $("#next-a").on("click", function () {
-
+  
   getRest();
   
 
@@ -46,6 +46,8 @@ $("#next-b").on("click", function () {
   });
   console.log("You clicked next-b");
 })
+
+
 
 
 
@@ -87,17 +89,17 @@ $("select").change(function () {   // <<<<< this is the correct syntax
   var cuisine;
   var price;
   $("#city option:selected").each(function () {
-  
+  city = $(this).val();
   console.log(city);
   });
 
   $("#cuisine option:selected").each(function () {
-    
+    cuisine = $(this).val();
     console.log(cuisine)
   });
 
   $("#range option:selected").each(function () {
-    
+    price = $(this).val();
     console.log(price)
   });
   // copy one of the 3 calls above and rename them accordingly to the recipie dropdown id's and paste below
@@ -116,9 +118,9 @@ function randomize() {
 // Creating an AJAX call for the specific movie button being clicked (AM)
 function getRest() {
 
-   city = $("#city option:selected").val();
-  cuisine = $("#cuisine option:selected").val();
-   price = $("#range option:selected").val();
+   city = $("#city").find(":selected").val();
+  cuisine = $("#cuisine").find(":selected").val();
+   price = $("#range").find(":selected").val();
 
   var qURL = 'https://developers.zomato.com/api/v2.1/search?entity_id=' + city + '&entity_type=city&count=20&cuisines=' + cuisine + '&sort=cost&order=' + price + '&apikey=e304ed6f3ad9f07bbf5b3447c1a94f04';
 
@@ -194,6 +196,10 @@ function thumbDisplay(e, id) {
   tmbDiv.append(showThumb);
   $("#thumb-view").append(tmbDiv);
 }
+
+
+
+
 
 
 

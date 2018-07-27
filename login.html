@@ -73,7 +73,7 @@
               email = $("#email").val();
               password = $("#password").val();
                  // firebase authentication 
-             promise =  auth.signInWithEmailAndPassword(email,password)
+             promise =  auth.signInWithEmailAndPassword(email,password);
                promise.catch( e => console.log(e.message));
             
 
@@ -87,7 +87,20 @@
                    else{
                        console.log("not Logged In")
                        btnlogout.classList.add('hide');
+                       
+
+                       
                    }
+
+
+                   $("#logout").on("click", function(){ 
+                  //  email = $("#email").val("");
+                 // password = $("#password").val("");
+                  btnlogout.classList.add('hide');
+                  firebase.auth().signOut();
+
+
+                   })
 
 
            });
