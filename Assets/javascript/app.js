@@ -1,4 +1,4 @@
- 
+
 $("#stay-in").on("click", function () {
   console.log("You clicked stay in");
   //$("#subwrapper").remove();   // This removes buttons when clicked
@@ -17,9 +17,9 @@ $("#take-out").on("click", function () {
 })
 
 $("#next-a").on("click", function () {
-  
+
   getRest();
-  
+
 
   $(".form-a").fadeOut(500, function () {
   });
@@ -46,14 +46,6 @@ $("#next-b").on("click", function () {
   });
   console.log("You clicked next-b");
 })
-
-
-
-
-
-
-
-
 
 var slideIndex = 0;
 carousel();
@@ -89,8 +81,8 @@ $("select").change(function () {   // <<<<< this is the correct syntax
   var cuisine;
   var price;
   $("#city option:selected").each(function () {
-  city = $(this).val();
-  console.log(city);
+    city = $(this).val();
+    console.log(city);
   });
 
   $("#cuisine option:selected").each(function () {
@@ -118,9 +110,9 @@ function randomize() {
 // Creating an AJAX call for the specific movie button being clicked (AM)
 function getRest() {
 
-   city = $("#city").find(":selected").val();
+  city = $("#city").find(":selected").val();
   cuisine = $("#cuisine").find(":selected").val();
-   price = $("#range").find(":selected").val();
+  price = $("#range").find(":selected").val();
 
   var qURL = 'https://developers.zomato.com/api/v2.1/search?entity_id=' + city + '&entity_type=city&count=20&cuisines=' + cuisine + '&sort=cost&order=' + price + '&apikey=e304ed6f3ad9f07bbf5b3447c1a94f04';
 
@@ -129,10 +121,10 @@ function getRest() {
     method: "GET"
   }).then(function (response) {
     console.log("call success");
-  
-   
-   
-     console.log(city + cuisine + price)
+
+
+
+    console.log(city + cuisine + price)
 
     // console.log(response);
     console.log(qURL);
@@ -170,27 +162,16 @@ function getReci() {
     }).then(function (response) {
       console.log(response);
       thumbDisplay(response, mealID);
-      recipeDisplay(response, mealID);
+      // recipeDisplay(response, mealID);
+      displayMeal(response);
     })
   });
 
 };
 
-function recipeDisplay(e, id) {
-  var recDiv = $("<div>");
-  var showRecipe = $("<p>").text(e.meals[0].strInstructions);
-  var titleRecipe =$("<h1>").text(e.meals[0].strMeal);
-  // var recImg = $("<img src=" + e. + ">");
-  // recDiv.prepend(recImg);
-  recDiv.append(showRecipe);
-  recDiv.prepend(titleRecipe);
-  $("#rec-view").append(recDiv);
-  
-}
-
 function thumbDisplay(e, id) {
   var tmbDiv = $("<a>");
-  var showThumb = $("<img src=" + e.meals[0].strMealThumb +">");
+  var showThumb = $("<img src=" + e.meals[0].strMealThumb + ">");
   // var recImg = $("<img src=" + e. + ">");
   // recDiv.prepend(recImg);
   tmbDiv.append(showThumb);
@@ -198,6 +179,83 @@ function thumbDisplay(e, id) {
 }
 
 
+function getID(id) {
+  //Function to fetch elements in index.html.
+  return document.getElementById(id);
+}
+
+var outputDiv = getID('output');
+
+function displayMeal(food) {
+  //Displays the content for Read more of Random
+  let meal = food.meals[0];
+  const ingArray = [];
+  const measArray = [];
+
+  for (const ingMeas in meal) {
+
+    if (ingMeas.includes('strIngredient')) {
+      //Checks if strIngreient has value 
+      //Then push it to an ingArray
+      const ing = food.meals[0][ingMeas];
+      if (ing) {
+        ingArray.push(ing);
+      }
+    }
+
+    if (ingMeas.includes('strMeasure')) {
+      //Checks if strIngreient has value 
+      //Then push it to an ingArray
+      const meas = food.meals[0][ingMeas];
+      if (meas) {
+        measArray.push(meas);
+      }
+    }
+
+  }
+
+  for (const mealData of food.meals) {
+    // mealData.strMeal = Meal title
+    randomMeal = `
+            <div class="recipeWrapper fadeOut">
+                <h2><span class="textUppercase">${mealData.strMeal}</span></h2>
+                <div class="ingredientsAndInstructions">
+                    <div class="cookingIngredients">
+                        <div id="ingredients">
+                        </div>
+                        <div id="measures">
+                        </div>
+                    </div>
+                    <div class="cookingInstructions">
+                        ${mealData.strInstructions}
+                    </div>
+                </div>
+            </div>
+        `;
+
+    let ingTitles = "";
+    for (const ingTitle of ingArray) {
+      ingTitles += `<p>${ingTitle}</p>`;
+    }
+
+    let measTitles = "";
+    for (const measTitle of measArray) {
+      measTitles += `<p>${measTitle}</p>`;
+    }
+
+
+    //Adds the content to index.html.
+    output.innerHTML = randomMeal;
+
+    const ingDiv = getID('ingredients');
+    const measDiv = getID('measures');
+
+    ingDiv.innerHTML = ingTitles;
+    measDiv.innerHTML = measTitles;
+
+  }
+
+}
 
 
 
@@ -213,11 +271,6 @@ function thumbDisplay(e, id) {
 
 
 
-
-
-
-
- 
 
 
 
