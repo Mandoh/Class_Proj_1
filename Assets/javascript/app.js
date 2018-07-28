@@ -121,18 +121,18 @@ function getRest() {
     method: "GET"
   }).then(function (response) {
     console.log("call success");
+    let num = Math.floor((Math.random() * response.restaurants.length));
+    console.log(num);
 
+    console.log(city + cuisine + price);
 
-
-    console.log(city + cuisine + price)
-
-    // console.log(response);
+    console.log(response.restaurants[num]);
     console.log(qURL);
-    // $("#results-a").append(response.restaurants[0].restaurant.name);
-    // $("#results-a").append(response.restaurants[0].restaurant.average_cost_for_two);
-    // $("#results-a").append(response.restaurants[0].restaurant.location.address);
+    $("#results-a").append("<p>" + response.restaurants[num].restaurant.name);
+    $("#results-a").append("<p>" +"$ for two: " + response.restaurants[num].restaurant.average_cost_for_two);
+    $("#results-a").append("<p>" + response.restaurants[num].restaurant.location.address);
     // $("#results-a").append(response.restaurants[0].restaurant.menu_url);
-    // console.log(response.restaurants[randomize()]);
+    
   });
 };
 // function rand2() {
