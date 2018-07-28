@@ -113,15 +113,121 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
  
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
 
-  .pics {
-  height: 100%;
-  width: 100%;
+.pics {
+    height: 100%;
+    width: 100%;
+}
 
+.textUnderline{
+    text-decoration: underline;
+}
 
-  }
+.textUppercase{
+    text-transform: uppercase;
+}
+
+/* RECIPE DISPLAY CSS */
+
+.recipeWrapper{
+    max-width: 800px;
+    transition: 1000ms;
+}
+
+.ingredientsAndInstructions{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+}
+
+.cookingIngredients{
+    letter-spacing: 1px;
+    display: flex;
+    
+}
+
+#ingredients{
+    width: 200px;
+}
+
+.cookingInstructions{
+    padding-top: 20px;
+    letter-spacing: 1px;
+    line-height: 16px;
+    max-width: 350px;
+}
+
+.img1 {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+}
+  
+img {
+    width: 25%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* TABLET + DESKTOP STYLING */
+
+@media screen and (min-width: 650px) {
+    
+    header{
+        height: 450px;
+    }
+    
+    h1{
+        font-size: 6em;
+    }
+    
+    header button{
+        font-size: 1em;
+    }
+    
+    h2{
+        font-size: 2.4em;
+    }
+    
+    h3{
+        font-size: 1.4em;
+    }
+    
+    .buttonWrapper{
+        padding: 12px 15px;
+        font-size: 0.8em;
+    }
+    
+    .recipeWrapper{
+        max-width: 800px;
+        transition: 1000ms;
+    }
+    
+    .ingredientsAndInstructions{
+        display: flex;
+        flex-direction: row;
+        font-size: 1em;
+    }
+
+    .cookingIngredients{
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #ingredients{
+        width: 200px;
+    }
+
+    .cookingInstructions{
+        padding-left: 50px;
+        padding-top: 10px;
+        max-width: 400px;
+    }
+    
+}
