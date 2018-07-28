@@ -231,6 +231,7 @@ function displayMeal(food) {
                         ${mealData.strInstructions}
                     </div>
                 </div>
+                <button id="startOver" class="btn-large">RESTART</button>
             </div>
         `;
 
@@ -254,6 +255,14 @@ function displayMeal(food) {
     ingDiv.innerHTML = ingTitles;
     measDiv.innerHTML = measTitles;
 
+    const startOverButton = getID('startOver');
+    startOverButton.addEventListener('click', function () {
+
+      output.innerHTML = "";
+      location.reload();
+
+      
+    });
   }
 
 }
