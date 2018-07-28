@@ -128,9 +128,10 @@ function getRest() {
 
     console.log(response.restaurants[num]);
     console.log(qURL);
-    $("#results-a").append("<p>" + response.restaurants[num].restaurant.name);
-    $("#results-a").append("<p>" +"$ for two: " + response.restaurants[num].restaurant.average_cost_for_two);
-    $("#results-a").append("<p>" + response.restaurants[num].restaurant.location.address);
+    $("#results-a").append("<h1>" + response.restaurants[num].restaurant.name);
+    $("#results-a").append("<h2>" +"$ for two: " + response.restaurants[num].restaurant.average_cost_for_two);
+    $("#results-a").append("<h3>" + response.restaurants[num].restaurant.location.address);
+    $("#results-a").append("<p>" + "<img src=" + response.restaurants[num].restaurant.featured_image + ">" + "</p>");
     // $("#results-a").append(response.restaurants[0].restaurant.menu_url);
     
   });
