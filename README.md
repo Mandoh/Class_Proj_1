@@ -11,5 +11,10 @@
     <li>Meal DB API- Recipe API</li>
 </ul>
 
+<h3>Contributors</h3>
+<p>Mandoh</p>
+<p>chum46</p>
+<p>Phenomphons</p>
+<p>Rodriguez32</p>
 
 
